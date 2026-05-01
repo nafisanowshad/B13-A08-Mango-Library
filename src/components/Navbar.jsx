@@ -6,7 +6,7 @@ import { FiMenu, FiX, FiBook } from "react-icons/fi";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  
+
   const [user, setUser] = useState(null);
 
   return (
@@ -42,9 +42,19 @@ export default function Navbar() {
       </div>
 
       <div className="navbar-end gap-2">
-        
+        {user ? (
+          <div className="dropdown dropdown-end">
+            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+            </div>
+            <ul tabIndex={0} className="mt-3 z-1 p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+              <li className="menu-title px-4 py-2">Hi, {user.name}</li>
+              <li><Link href="/profile">Profile</Link></li>
+              <li><button onClick={() => setUser(null)} className="text-error">Logout</button></li>
+            </ul>
+          </div>
+        ) : (
           <Link href="/login" className="btn btn-primary rounded-full px-6">Login</Link>
-        
+        )}
       </div>
     </div>
   );
