@@ -1,15 +1,14 @@
-
 import Link from "next/link";
-// import books from "@/data/books.json";
+import books from "@/data/books.json";
 import { FiArrowRight, FiBookOpen, FiStar, FiShield } from "react-icons/fi";
 
 export default function Home() {
-  // const featuredBooks = books.slice(0, 4);
+  const featuredBooks = books.slice(0, 4);
 
   return (
     <div className="flex flex-col gap-16 pb-16">
       {/* Hero Banner */}
-      {/* <section 
+      <section 
         className="hero min-h-[60vh] rounded-3xl overflow-hidden relative shadow-2xl bg-base-200 bg-cover bg-center"
         style={{ backgroundImage: 'url(/library_hero_bg.png)' }}
       >
@@ -25,17 +24,17 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* Marquee Section */}
-      {/* <section className="bg-primary/10 py-3 overflow-hidden whitespace-nowrap rounded-lg">
+      <section className="bg-primary/10 py-3 overflow-hidden whitespace-nowrap rounded-lg">
         <div className="inline-block animate-[marquee_15s_linear_infinite] text-primary font-semibold text-lg">
-          🚀 New Arrivals: The Quantum Age, Whispers in the Wind | Special Discount on Memberships! Get 50% off on your first month. 📚 Read unlimited books!
+          🚀 New Arrivals: Quantum Computing | Special Discount on Memberships! Get 50% off on your first month. 📚 Read unlimited books!
         </div>
-      </section> */}
+      </section>
 
-      {/* Featured Books */}
-      {/* <section>
+      {/* Featured Books section*/}
+      <section>
         <div className="flex justify-between items-end mb-8">
           <div>
             <h2 className="text-3xl font-bold text-base-content">Featured Books</h2>
@@ -59,7 +58,7 @@ export default function Home() {
               </figure>
               <div className="card-body">
                 <h3 className="card-title text-lg leading-tight">{book.title}</h3>
-                <p className="text-sm text-base-content/60 grow-0">by {book.author}</p>
+                <p className="text-sm text-base-content/60 flex-grow-0">by {book.author}</p>
                 <div className="card-actions justify-end mt-4">
                   <Link href={`/books/${book.id}`} className="btn btn-primary btn-sm rounded-full w-full">
                     View Details
@@ -74,10 +73,10 @@ export default function Home() {
             View All Books
           </Link>
         </div>
-      </section> */}
+      </section>
 
-      {/* Benefits */}
-      {/* <section className="py-12 px-6 bg-base-200 rounded-3xl">
+      {/* Extra Section 1: Benefits */}
+      <section className="py-12 px-6 bg-base-200 rounded-3xl">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold">Why Choose Us?</h2>
           <p className="text-base-content/60 mt-3 max-w-xl mx-auto">Experience the best digital library platform with premium features.</p>
@@ -105,10 +104,10 @@ export default function Home() {
             <p className="text-sm text-base-content/70">Your data and reading history are safe with us.</p>
           </div>
         </div>
-      </section> */}
+      </section>
 
-      {/* Newsletter */}
-      {/* <section className="hero bg-linear-to-br from-primary to-secondary rounded-3xl text-primary-content shadow-xl py-12">
+      {/* Extra Section 2: Newsletter */}
+      <section className="hero bg-linear-to-br from-primary to-secondary rounded-3xl text-primary-content shadow-xl py-12">
         <div className="hero-content text-center flex-col">
           <h2 className="text-3xl font-bold">Stay Updated!</h2>
           <p className="max-w-md mx-auto my-4 text-primary-content/80">
@@ -119,7 +118,7 @@ export default function Home() {
             <button className="btn btn-neutral join-item">Subscribe</button>
           </div>
         </div>
-      </section> */}
+      </section>
     </div>
   );
 }
